@@ -1,0 +1,512 @@
+<!-----------------------------------------------------------------------
+Music Page [01]: Dreamer
+Made by glenthemes
+
+Initial release: 2017/06/11
+Last updated: 2019/04/11
+ 
+TERMS OF USE:
+1) Do not remove the credit.
+2) Do not remove parts of the code without my permission.
+3) Do not claim my codes as your own.
+4) Do not use my works as base codes.
+5) You may add widgets to my themes and pages.
+------------------------------------------------------------------------>
+ 
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+ 
+<title>{Title}</title>
+ 
+<link rel="shortcut icon" href="{Favicon}">
+
+<link rel="stylesheet" href="//cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+ 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+ 
+<script src="//static.tumblr.com/iuw14ew/VSQma1786/jquery.style-my-tooltips.js"></script>
+<script>
+(function($){
+$(document).ready(function(){
+$("a[title]").style_my_tooltips({
+tip_follows_cursor:true,
+tip_delay_time:120,
+tip_fade_speed:120,
+attribute:"title"
+});
+});
+})(jQuery);
+</script>
+
+<script src="//static.tumblr.com/gtjt4bo/oQ4pcx2p5/symphonia.js"></script>
+
+<script src="//static.tumblr.com/gtjt4bo/ksJpcx2cj/concordia.js"></script>
+
+<link rel="stylesheet" href="//static.tumblr.com/gtjt4bo/OiSpcx2yn/melodiam.css">
+
+<script>
+// script credit: alexander farkas @ stackoverflow
+// //stackoverflow.com/questions/19790506
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+</script>
+ 
+<link href="//fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<link href="//fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+ 
+<style type="text/css">
+ 
+/*--------------------TOOLTIPS--------------------*/
+#s-m-t-tooltip {
+    padding: 4px 9px;
+    margin: 26px 9px 0px 15px;
+    background-color: #333; /* tooltip background color */
+    font-family: karla;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ddd; /* tooltip text color */
+    z-index:99999!important;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+}
+ 
+/*--------------------TUMBLR CONTROLS--------------------*/
+iframe#tumblr_controls, .iframe-controls--desktop {
+    top:3px!important;
+    right:3px!important;
+    position:fixed!important;
+    opacity:0.3;
+    -webkit-filter:invert(100%);
+    filter:invert(100%);
+    z-index:999999!important;
+    transition:0.3s ease-in-out;
+    display:none;
+}
+ 
+iframe#tumblr_controls:hover, .iframe-controls--desktop:hover {
+    opacity:0.6;
+}
+ 
+/*--------------------SCROLLBAR--------------------*/
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #303030; /* scrollbar color */
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #010100; /* scrollbar background */
+}
+ 
+ 
+/*--------------------SCROLLBAR--------------------*/
+::selection {
+background: #010100; /* text selection background */
+color:#c5c5c5; /* text selection color */
+}
+ 
+::-moz-selection {
+background: #010100; /* text selection background */
+color:#c5c5c5; /* text selection color */
+}
+ 
+ 
+/*--------------------BASICS--------------------*/
+body {
+background-color:#f8f8f8; /* background color */
+background-image:url(//68.media.tumblr.com/2c745b6adf78596c3a9ba6bef089087f/tumblr_ord7zghqUp1qg2f5co3_r1_250.png);
+background-position:fixed;
+background-repeat:repeat;
+color:#b3b3b3;
+cursor:normal;
+font-family:Karla, "KaiTi", "楷体", STKaiti, "华文楷体", serif;
+line-height:16px;
+font-size:12px;
+letter-spacing:0px;
+text-align:left;
+}
+
+a {
+color:#c884a0; /* link color */
+text-decoration:none;
+cursor:normal;
+text-decoration:none;
+-webkit-transition: all 0.4s ease-in-out;
+-moz-transition: all 0.4s ease-in-out;
+-o-transition: all 0.4s ease-in-out;
+}
+ 
+a:hover {
+text-decoration:none;
+color:#eee; /* link hover color */
+}
+ 
+img {
+opacity:1;
+text-decoration:none;
+}
+
+/*-----------------------PHONE SCREEN-----------------------*/
+#phone {
+    position:fixed;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    width:275px;
+    height:calc((275px * 1.5625) + 50px);
+    
+    /* phone borders. make sure the colors are all the same */
+    border-top:25px solid #232323;
+    border-right:25px solid #232323;
+    border-bottom:50px solid #232323;
+    border-left:25px solid #232323;
+    
+    display:table;
+    border-radius:15px;
+}
+
+#phone:after {
+    content:"";
+    position:absolute;
+    top:100%;
+    margin-top:8px;
+    margin-left:calc(-5px + ((275px / 2) * -1) - 10px);
+    width:33px;
+    height:33px;
+    background-color:#111; /* phone "home" button color */
+    border-radius:100%;
+    border:1px solid #444; /* phone "home button border */
+}
+
+#phone img {width:100%;overflow:hidden;}
+
+.toptitle {
+    background-color:#333; /* top bar navigation background color */
+    color:#eee; /* top bar navigation text color*/
+    position:inline;margin-top:-1px;
+    width:275px;
+    text-align:center;
+    font-family:raleway;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:15px 0;
+}
+
+.nav1 {margin-left:10px;}
+
+.nav2 {margin-left:247px;}
+
+.nav1, .nav2 {
+    position:absolute;
+    margin-top:-34px;
+    width:20px;height:23px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+.nav1:hover, .nav2:hover {opacity:0.6;}
+
+.nav1 .lnr, .nav2 .lnr {
+    font-size:20px;
+    color:#fff; /* top bar navigation buttons color */
+}
+
+.sheep {
+    position:absolute;
+    margin:97.5px auto auto auto;
+    left:0;right:0;
+    width:80px;
+    height:80px;
+    background-color:rgba(255,255,255,0.72); /* "now playing" music button background color*/
+    border-radius:100%;
+    cursor:pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.sheep:hover {
+    -webkit-transform:scale3d(1.2,1.2,1.2);
+    transform:scale3d(1.2,1.2,1.2);
+}
+
+.tri, .paws {
+    margin:32px 0px 0px 6px;
+    color:#000; /* "now playing" music button color */
+    font-size:35px;
+    text-align:center;
+}
+
+.tri {visibility:visible;}
+.change1 {visibility:hidden;}
+
+.paws {visibility:hidden;margin-left:0px;}
+.change2 {visibility:visible;margin-top:-16px;}
+
+.nowplaying {
+    position:absolute;
+    margin-top:243px; /* on index pages: change to 239px */
+    width:275px;
+    padding:9px 0px 7px 0px;
+    background-color:rgba(0,0,0,0.7); /* "now playing" song info background color*/
+    color:#eee /* "now playing" song info color */;
+    text-align:center;
+    font-family:raleway;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+#infosect {
+    background-color:#333 /* music playlist background color */;
+    position:absolute;
+    margin-top:274px;
+    width:275px;
+    height:162px;
+}
+
+#infosect table {padding:10px;}
+
+#infosect tbody {line-height:1.4;}
+
+#infosect tr {
+    color:#ccc; /* music playlist text color */
+    cursor:pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+#infosect tr:hover {color:#fff; /* music playlist text color hover */}
+
+#infosect td {width:100%;}
+
+/*-----------------------CUSTOM LINKS-----------------------*/
+#customlinks {
+    position:fixed;
+    bottom:0;left:0;
+    margin-bottom:15px;
+    margin-left:15px;
+    width:50px;
+    height:auto;
+    z-index:3000;
+}
+ 
+#customlinks .lnr {
+    font-size:12px;
+    padding:10px 9px 10px 10px;
+    background-color:#333; /* custom links background color */
+    color:#eee; /* custom links color */
+    display:inline-block;
+    margin-top:3px;
+    margin-bottom:3px;
+    border-radius:100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+ 
+#customlinks .lnr:hover {
+    background-color:#ff7969;  /* custom links hover background color */
+    color:#fff; /* custom links hover color */
+}
+
+/*-----------------------CREDIT. DO NOT REMOVE-----------------------*/
+#c {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:9000;
+}
+ 
+#c a {font-family:karla;
+    font-size:8px;
+    text-transform:uppercase;
+    color:#eee; /* credit color */
+    background-color:#333; /* credit background color */
+    letter-spacing:1.3px;
+    padding:5px 7px;
+}
+ 
+#c a:hover {
+    color:#fff; /* credit hover color */
+    background-color: #ff7969; /* credit background hover color */
+}
+ 
+</style>
+ 
+</head>
+ 
+<body>
+
+<div id="phone">
+
+<div class="toptitle">Your title here</div>
+
+<div class="nav1"><a href="/" title="return to index"><span class="lnr lnr-arrow-left"></span></a></div>
+
+<div class="nav2">
+    <a href="/" title="your title here"> <!-- a custom link here -->
+    <span class="lnr lnr-menu"></span>
+</a></div>
+
+
+<div class="sheep" onclick="javascript:toggleMainAudio();">
+    <div class="tri">▶</div>
+    <div class="paws">❚❚</div>
+</div>
+
+<!-- audio file link for main audio -->
+<audio src="//a.tumblr.com/tumblr_or9hfuOYp01u3hof1o1.mp3" type="audio/mpeg" id="mainaudio"></audio>
+
+<!-- audio file link for playlist audio 1 -->
+<audio src="//a.tumblr.com/tumblr_orb8vgZIKY1slxksio1.mp3" type="audio/mpeg" id="audio1"></audio>
+
+<!-- audio file link for playlist audio 2 -->
+<audio src="//a.tumblr.com/tumblr_orb94iiPHt1slxksio1.mp3" type="audio/mpeg" id="audio2"></audio>
+
+<!-- audio file link for playlist audio 3 -->
+<audio src="//a.tumblr.com/tumblr_orb9cvHBte1slxksio1.mp3" type="audio/mpeg" id="audio3"></audio>
+
+<!-- audio file link for playlist audio 4 -->
+<audio src="//a.tumblr.com/tumblr_orb9otQ9GL1slxksio1.mp3" type="audio/mpeg" id="audio4"></audio>
+
+<!-- audio file link for playlist audio 5 -->
+<audio src="//a.tumblr.com/tumblr_orb9t3MM0N1slxksio1.mp3" type="audio/mpeg" id="audio5"></audio>
+
+<!-- audio file link for playlist audio 6 -->
+<audio src="//a.tumblr.com/tumblr_orb9xtl3eA1slxksio1.mp3" type="audio/mpeg" id="audio6"></audio>
+
+<!-- audio file link for playlist audio 7 -->
+<audio src="//a.tumblr.com/tumblr_ojftm9p1QL1v9fz3vo1.mp3" type="audio/mpeg" id="audio7"></audio>
+
+<!--you can have up to 30 songs-->
+
+<div class="nowplaying">
+<marquee>
+
+<!-- "now playing" song info -->
+Artist name — Song name
+
+</marquee>
+</div>
+
+<div id="infosect">
+    
+    <table><tbody>
+    
+      <tr class="woah1" onclick="javascript:toggleAudio1();"><!--row 1 START-->
+        <td>Song name #1</td><!-- playlist song #1 name -->
+       
+        <td>
+        <div class="trii1">▶</div>
+        <div class="pawss1">❚❚</div>
+        </td>
+      </tr><!--row 1 END-->
+      
+      
+      <tr class="woah2" onclick="javascript:toggleAudio2();"><!--row 2 START-->
+        <td>Song name #2</td><!-- playlist song #2 name -->
+       
+        <td>
+        <div class="trii2">▶</div>
+        <div class="pawss2">❚❚</div>
+        </td>
+      </tr><!--row 2 END-->
+      
+      
+      <tr class="woah3" onclick="javascript:toggleAudio3();"><!--row 3 START-->
+        <td>Song name #3</td><!-- playlist song #3 name -->
+       
+        <td>
+        <div class="trii3">▶</div>
+        <div class="pawss3">❚❚</div>
+        </td>
+      </tr><!--row 3 END-->
+      
+      
+      <tr class="woah4" onclick="javascript:toggleAudio4();"><!--row 4 START-->
+        <td>Song name #4</td><!-- playlist song #4 name -->
+       
+        <td>
+        <div class="trii4">▶</div>
+        <div class="pawss4">❚❚</div>
+        </td>
+      </tr><!--row 4 END-->
+      
+      
+      <tr class="woah5" onclick="javascript:toggleAudio5();"><!--row 5 START-->
+        <td>Song name #5</td><!-- playlist song #5 name -->
+       
+        <td>
+        <div class="trii5">▶</div>
+        <div class="pawss5">❚❚</div>
+        </td>
+      </tr><!--row 5 END-->
+      
+      
+      <tr class="woah6" onclick="javascript:toggleAudio6();"><!--row 6 START-->
+        <td>Song name #6</td><!-- playlist song #6 name -->
+       
+        <td>
+        <div class="trii6">▶</div>
+        <div class="pawss6">❚❚</div>
+        </td>
+      </tr><!--row 6 END-->
+      
+      
+      <tr class="woah7" onclick="javascript:toggleAudio7();"><!--row 7 START-->
+        <td>Song name #7</td><!-- playlist song #7 name -->
+      
+        <td>
+        <div class="trii7">▶</div>
+        <div class="pawss7">❚❚</div>
+        </td>
+      </tr><!--row 7 END-->
+      
+      <!--you can have up to 30 songs-->
+      
+    </tbody></table>
+    
+</div>
+
+<!--album art for your "main song"-->
+<img src="//68.media.tumblr.com/dd9021da7137a7fd8a6081aa8223a3e4/tumblr_or9qelnnDN1qg2f5co1_1280.jpg" />
+
+</div>
+
+<!-----CUSTOM LINKS----->
+<div id="customlinks" class="animated fadeInLeftBig">
+    <a href="/" title="home"><span class="lnr lnr-power-switch"></span></a>
+    <a href="/" title="contact"><span class="lnr lnr-phone"></span></a>
+    <a href="/" title="archive"><span class="lnr lnr-map"></span></a>
+    <!-----YOUR CUSTOM LINKS----->
+    <!-----FEEL FREE TO CHANGE THE ICONS----->
+    <!-----"sample link" IS THE TOOLTIP TEXT ON HOVER----->
+    <a href="/" title="sample link"><span class="lnr lnr-link"></span></a>
+    <a href="/" title="sample link"><span class="lnr lnr-list"></span></a>
+    <a href="/" title="sample link"><span class="lnr lnr-star"></span></a>
+</div>
+
+<!-----CREDIT. DO NOT REMOVE----->
+<div id="c" class="animated fadeInRightBig"><a href="//glenthemes.tumblr.com" title="page by glenthemes" target="_blank">© 2017 Glenthemes</a></div>
+ 
+</body>
+ 
+</div></div>
+</html>
