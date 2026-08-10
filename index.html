@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CottonClaws</title>
+ <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="player">
+    <div class="window">
+
+      <div class="window-body">
+        <div class="flex">
+          <div class="wheel" style="height:100px;width:100px;">
+            <div class="wheelcontrols">
+              <button class="fas fa-plus" onclick="volumeUp()" style="padding-top:4px; padding-bottom:0;"></button>
+            </div>
+            <table class="wheelcontrols">
+  <th>
+    <button class="fas fa-backward" onclick="prevTrack()"></button>
+  </th>
+  <th class="innerwheel">
+    <button class="playpause-track fas fa-play" onclick="playpauseTrack()"></button>
+  </th>
+  <th>
+    <button class="fas fa-forward" onclick="nextTrack()"></button>
+  </th>
+</table>
+            <div class="wheelcontrols" style="padding:0;">
+              <button class="fas fa-minus" onclick="volumeDown()"></button>
+            </div>
+          </div>
+
+          <div id="musicplayer">
+
+            <div class="flex">
+              <marquee scrollamount="4" class="songtitle"></marquee>
+            </div>
+
+            <div class="seeking">
+              <div class="current-time">00:00</div>
+
+              <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+
+              <div class="total-duration">0:00</div>
+            </div>
+
+            <table class="controls">
+              <tr>
+                <td>
+                  <button><div class="fas fa-sync"></div></button>
+                </td>
+                <td>
+                  <button><div class="fas fa-music"></div>
+                </td>
+                <td>
+                  <button><div class="fas fa-random"></div></button>
+                </td>
+              </tr>
+            </table>
+
+            <audio id="music" src=""></audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 <script>
   // initiate variables
   let track_name = document.querySelector(".songtitle");
@@ -98,7 +159,8 @@
   //
   //
   //
-  function loadTrack(track_index) {clearInterval(updateTimer);
+  function loadTrack(track_index) {
+    clearInterval(updateTimer);
     resetValues();
     // load a new track
     curr_track.src = track_list[track_index].path;
@@ -210,72 +272,4 @@ function volumeDown() {
   // load the first track in the tracklist
   loadTrack(track_index);
 </script>
-    <link rel="stylesheet" href="main.css">
-  </head>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-</head>
-<body>
-<div class="player">
-    <div class="window">
-
-      <div class="window-body">
-        <div class="flex">
-          <div class="wheel" style="height:100px;width:100px;">
-            <div class="wheelcontrols">
-              <button class="fas fa-plus" onclick="volumeUp()" style="padding-top:4px; padding-bottom:0;"></button>
-            </div>
-            <table class="wheelcontrols">
-  <th>
-    <button class="fas fa-backward" onclick="prevTrack()"></button>
-  </th>
-  <th class="innerwheel">
-    <button class="playpause-track fas fa-play" onclick="playpauseTrack()"></button>
-  </th>
-  <th>
-    <button class="fas fa-forward" onclick="nextTrack()"></button>
-  </th>
-</table>
-            <div class="wheelcontrols" style="padding:0;">
-              <button class="fas fa-minus" onclick="volumeDown()"></button>
-            </div>
-          </div>
-
-          <div id="musicplayer">
-
-            <div class="flex">
-              <marquee scrollamount="4" class="songtitle"></marquee>
-            </div>
-
-            <div class="seeking">
-              <div class="current-time">00:00</div>
-
-              <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-
-              <div class="total-duration">0:00</div>
-            </div>
-
-            <table class="controls">
-              <tr>
-                <td>
-                  <button><div class="fas fa-sync"></div></button>
-                </td>
-                <td>
-                  <button><div class="fas fa-music"></div>
-                </td>
-                <td>
-                  <button><div class="fas fa-random"></div></button>
-                </td>
-              </tr>
-            </table>
-
-            <audio id="music" src=""></audio>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-    <script src="script.js"></script>
-  </body>
-</html>
+  </html>
